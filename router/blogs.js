@@ -15,6 +15,7 @@ router.get('/blogPage/:slug', (req, res) => {
     
     const myBlog = blogs.filter((e) => {
         return e.slug === req.params.slug;
+        
     });
     console.log(myBlog);
     res.sendFile(path.join(__dirname, '../templates/blogPage.html'));
