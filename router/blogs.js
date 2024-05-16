@@ -12,8 +12,9 @@ router.get('/blog', (req, res) => {
 });
 
 router.get('/blogPage/:slug', (req, res) => {
+    
     const myBlog = blogs.filter((e) => {
-         e.slug === req.params.slug;
+        return e.slug === req.params.slug;
     });
     console.log(myBlog);
     res.sendFile(path.join(__dirname, '../templates/blogPage.html'));
@@ -24,8 +25,8 @@ router.get('/blogPage/:slug', (req, res) => {
 //     res.sendFile(path.join(__dirname, '../templates/blogHome.html'));
 // });
 
-// router.get('/blogPage', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../templates/blogPage.html'));
-// });
+router.get('/blogPage', (req, res) => {
+    res.sendFile(path.join(__dirname, '../templates/blogPage.html'));
+});
 
 module.exports = router;
