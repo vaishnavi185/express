@@ -4,7 +4,8 @@ const path = require('path');
 const blog = require('../data/blog');
 
 router.get('/home', (req, res) => {
-    res.sendFile(path.join(__dirname, '../templates/index.html'));
+    // res.sendFile(path.join(__dirname, '../templates/index.html'));
+    res.render('home')
 });
 
 router.get('/blog', (req, res) => {
